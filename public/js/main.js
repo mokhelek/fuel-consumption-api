@@ -24,15 +24,24 @@ const vehicles = axios.get("/api/vehicles").then((result) => {
 function submitForm() {
     const description = document.getElementById("description").value;
     const regNumber = document.getElementById("reg-num").value;
+    const errorElem = document.querySelector(".error")
 
     const formData = {
         description: description,
         regNumber: regNumber,
     };
 
-    axios.post("/api/vehicle", formData).then(() => {
-        alert("Successfully added");
-    });
+    if(description && regNumber){
+        axios.post("/api/vehicle", formData).then(() => {
+        
+        });
+    }else{
+        errorElem.style.display = "block"
+        setTimeout(()=>{
+            errorElem.style.display = "none"
+        },4000)
+    }
+   
 }
 
 
