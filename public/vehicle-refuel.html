@@ -33,19 +33,28 @@
             </a>
             <br />
            
-            <div class="refuel-vehicle">
-                        
-            </div>
-            <script type="text/x-template" class="refuel-vehicle-template">
-                <div>
-                  {{#each refuel_vehicle}}
-                    {{this.description}} --
-                  {{/each}}
-                </div>  
-            </script>
+            
 
             <div class="d-flex justify-content-center" >
                 <div style="padding: 3rem 2rem;background-color: rgb(238, 252, 242);" class="col-11 col-md-8 col-lg-7">
+                  <div class="refuel-vehicle">
+                        
+                  </div>
+                  <script type="text/x-template" class="refuel-vehicle-template">
+                      <div class="card card-body card2">
+                        <center>
+                          <p style="color:orange" >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="18" fill="currentColor" class="bi bi-info-circle-fill" viewBox="0 0 16 16">
+                              <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2"/>
+                            </svg>&nbsp;<span>You Are Refueling This Car</span>
+                             
+                          </p>
+                          <h5>{{refuel_vehicle.description}} </h5>
+                          <p class="title3" >{{refuel_vehicle.reg_number}}</p>
+                        </center>
+                      </div>
+                  </script>
+                  
                   <center><h1 class="title2">Refuel A Vehicle</h1></center>  
                   <div>
                         <div class="mb-3">

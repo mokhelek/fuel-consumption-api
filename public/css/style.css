@@ -7,6 +7,18 @@
     border-radius: 0;
     border-left: 4px rgb(102, 199, 115) solid;
 }
+.card2{
+    border: 1px gray solid !important;
+    padding-top: 0.5rem !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0.7rem;
+}
+
+.title3{
+    font-family: "CarGo";
+    font-size: 1.8rem;
+    color: gray;
+}
 
 header{
     background-color: rgb(120, 179, 120);

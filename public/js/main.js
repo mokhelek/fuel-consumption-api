@@ -51,7 +51,7 @@ function getRefuelVehicle() {
             let template = document.querySelector(".refuel-vehicle-template").innerHTML;
             let compiledTemplate = Handlebars.compile(template);
             let refuel_vehicle = result.data.data;
-            console.log(refuel_vehicle)
+            console.log("*********+++++++ ", refuel_vehicle)
             templatePlaceHolder.innerHTML = compiledTemplate({ refuel_vehicle });
         });
     }else{
