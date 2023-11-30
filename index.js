@@ -1,8 +1,9 @@
 import pgPromise from 'pg-promise';
 import express from 'express';
-
+import 'dotenv/config';
 import FuelConsumption from './fuel-consumption.js';
 import FuelConsumptionAPI from './fuel-consumption-api.js';
+import cors from "cors"; 
 
 const pgp = pgPromise();
 
@@ -20,6 +21,8 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
+app.use(express.static("public"));
+app.use(cors());
 
 app.get('/api/vehicles', fuelConsumptionAPI.vehicles);
 app.get('/api/vehicle', fuelConsumptionAPI.vehicle);

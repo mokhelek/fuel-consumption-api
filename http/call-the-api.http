@@ -19,10 +19,10 @@ POST http://localhost:3000/api/refuel HTTP/1.1
 content-type: application/json
 
 {
-    "vehicleId" : 245, 
-    "liters" : 30, 
+    "vehicleId" : 17, 
+    "liters" : 20, 
     "amount" : 675, 
-    "distance" :  56003, 
+    "distance" :  5603, 
     "filledUp" : true
 }
 

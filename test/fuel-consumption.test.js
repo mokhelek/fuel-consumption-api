@@ -1,9 +1,9 @@
 import FuelConsumption from '../fuel-consumption.js';
 import pgPromise from 'pg-promise';
 import assert from 'assert';
-
+import 'dotenv/config';
 const pgp = pgPromise();
-const DATABASE_URL=  "postgresql://fuel:fuel@localhost:5432/fuel_consumption";
+const DATABASE_URL=  process.env.DATABASE_URL_TEST || "postgresql://fuel:fuel@localhost:5432/fuel_consumption";
 
 const config = { 
 	connectionString : DATABASE_URL
@@ -20,7 +20,7 @@ const db = pgp(config);
 describe("The FuelConsumption API", function () {
 
     // set the test time out if needed
-    this.timeout(3000); 
+    this.timeout(10000); 
 
     this.beforeEach(async function(){
         await db.none(`delete from fuel_entries`);
