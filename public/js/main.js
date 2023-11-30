@@ -15,10 +15,33 @@ function submitForm() {
         description: description,
         regNumber: regNumber
     };
-    console.log(formData)
-
+   
     axios.post("/api/vehicle", formData).then(()=>{
         alert("Successfully added")
     })
-
 }
+
+function submitRefillForm() {
+    const liters = document.getElementById('liters').value;
+    const amount = document.getElementById('amount').value;
+    const distance = document.getElementById('distance').value;
+    const params = new URLSearchParams(window.location.search);
+
+    const idValue = params.get('id');
+    
+
+    
+    const formData = {
+        vehicleId: idValue,
+        liters,
+        amount,
+        distance,
+        filledUp: true
+    };
+    console.log(formData)
+
+    axios.post("api/refuel", formData).then(()=>{
+        alert("Successfully re-filled")
+    })
+}
+
