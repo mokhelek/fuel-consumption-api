@@ -58,7 +58,7 @@ function submitRefillForm() {
     const amount = document.getElementById("amount").value;
     const distance = document.getElementById("distance").value;
     const params = new URLSearchParams(window.location.search);
-
+    const errorElem = document.querySelector(".error2")
     const idValue = params.get("id");
 
     const formData = {
@@ -69,9 +69,17 @@ function submitRefillForm() {
         filledUp: true,
     };
 
-    axios.post("api/refuel", formData).then(() => {
-        alert("Successfully re-filled");
-    });
+    if(liters && amount && distance){
+        axios.post("api/refuel", formData).then(() => {
+          
+        });
+    }else{
+        errorElem.style.display = "block"
+        setTimeout(()=>{
+            errorElem.style.display = "none"
+        },4000)
+    }
+  
 }
 
 
