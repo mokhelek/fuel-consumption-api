@@ -1,3 +1,10 @@
+
+/*
+    Getting a list of all the vehicles
+    Using handlebars to render the data to
+    the vehicles template
+
+*/
 const vehicles = axios.get("/api/vehicles").then((result) => {
     let templatePlaceHolder = document.querySelector(".vehicles");
     let template = document.querySelector(".vehicles-template").innerHTML;
@@ -6,6 +13,14 @@ const vehicles = axios.get("/api/vehicles").then((result) => {
     templatePlaceHolder.innerHTML = compiledTemplate({ vehicles });
 });
 
+
+/*
+    The function for adding a new car
+    Grab the data from the form
+    put it into an object
+    make an API call and submit the data
+    to be added
+*/
 function submitForm() {
     const description = document.getElementById("description").value;
     const regNumber = document.getElementById("reg-num").value;
@@ -20,6 +35,15 @@ function submitForm() {
     });
 }
 
+
+/*
+  Function for REFUELING a vehicle
+  Grab the data about the refueling
+  from the form
+  put it into an object
+  make an API call and submit the data
+  to be added 
+ */
 function submitRefillForm() {
     const liters = document.getElementById("liters").value;
     const amount = document.getElementById("amount").value;
@@ -41,6 +65,14 @@ function submitRefillForm() {
     });
 }
 
+
+/*
+    The function for getting the Vehicle
+    that has been selected for a refill
+    make an API call to get the data and
+    then send it via handlebars to the
+    template
+*/
 function getRefuelVehicle() {
     const params = new URLSearchParams(window.location.search);
 
