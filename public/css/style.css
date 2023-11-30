@@ -2,3 +2,16 @@
     border-radius: 0;
     border-left: 4px rgb(102, 199, 115) solid;
 }
+
+header{
+    background-color: rgb(120, 179, 120);
+    padding: 1rem;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.title{
+    color: #fff;
+}
